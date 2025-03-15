@@ -1,0 +1,93 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex:    <http://www.example.org/#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+
+@prefix poc:   <http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#> .
+
+# Basic model consistency requirements
+
+# Test: Every machine is in a location
+poc:MachineIsLocatedSomewhere
+  a sh:NodeShape ;
+  sh:targetClass poc:Machine ;
+  sh:property [
+    sh:path poc:isLocatedIn ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:message "Model: Machine must be located in a Location" ;
+  ] .
+
+# TODO: Many more
+
+
+# Wall consistency requirement
+
+# It's enough to see if isObstructedVisibilityZone is set to anything.
+poc:NoObstructedVisibilityZones
+  a sh:NodeShape ;
+  sh:targetClass poc:VisibilityZone ;
+  sh:property [
+    sh:path poc:isObstructedVisibilityZone ;
+    sh:maxCount 0 ;
+    sh:message "Model: A VisibilityZone is obstructed by a Wall." ;
+  ] .
+
+
+# Boolean closure requirements
+
+poc:MachineStateVariablesClosure
+  a sh:NodeShape ;
+  sh:targetClass poc:Machine ;
+  sh:property [
+    sh:path poc:isRunning ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:message "Model - Closure: Machine must have exactly one value for isRunning."
+  ] ;
+  sh:property [
+    sh:path poc:isInEStopCondition ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:message "Model - Closure: Machine must have exactly one value for isInEStopCondition."
+  ] .
+
+poc:EStopStateVariableClosure
+  a sh:NodeShape ;
+  sh:targetClass poc:EStop ;
+  sh:property [
+    sh:path poc:isEngaged ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:message "Model - Closure: EStop must have exactly one value for isEngaged."
+  ] ;
+  sh:property [
+    sh:path poc:isRedYellow ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:message "Model - Closure: EStop must have exactly one value for isRedYellow."
+  ] .
+
+poc:NonColorChangingEStopAlwaysRedYellow
+  a sh:NodeShape ;
+  sh:targetClass poc:EStop ;
+  sh:or (
+    [
+      sh:property [ # e-stop is red/yellow
+        sh:path poc:isRedYellow ;
+        sh:hasValue true ;
+      ]
+    ] # or
+    [
+      sh:property [ # e-stop is color changing
+        sh:path rdf:type ;
+        sh:hasValue poc:ColorChangingEStop ;
+      ]
+    ]
+  ) ;
+  sh:message "Model: Non color-changing e-stop must be red/yellow." .
+
+
+

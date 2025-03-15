@@ -1,0 +1,33 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# My ontology
+PREFIX poc: <http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#>
+
+# Requirement 2.2.1: E-stops are red and yellow if and only if they are connected
+# Violation: a r/y e-stop which is not connected, OR a non r/y e-stop which is connected.
+# Can form that atomic _not_ using a SPARQL MINUS command.
+# Necessary to apply closure on isRedYellow for this to work. Use SHACL.
+
+SELECT ?estop
+WHERE {
+  {
+    {
+      ?estop a poc:EStop .
+      ?estop poc:isRedYellow true .
+    } 
+    MINUS
+    {
+      ?estop a poc:EStop .
+      ?estop poc:isConnectedTo ?safetyNetwork .
+    }
+  }
+  UNION
+  {
+    ?estop a poc:EStop .
+    ?estop poc:isRedYellow false .
+    ?estop poc:isConnectedTo ?safetyNetwork .
+  }
+}

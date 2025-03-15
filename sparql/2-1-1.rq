@@ -1,0 +1,20 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# My ontology
+PREFIX poc: <http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#>
+
+# Requirement 2.1.1: A red/yellow e-stop stops all spanned machines
+# Violation: an e-stop with isRedYellow == true and isEngaged == true spans a machine with isRunning == true
+
+SELECT ?estop ?machine
+WHERE {
+  ?estop a poc:EStop .
+  ?machine a poc:Machine .
+  ?estop poc:isRedYellow true .
+  ?estop poc:isEngaged true .
+  ?estop poc:spans ?machine .
+  ?machine poc:isRunning true . 
+}

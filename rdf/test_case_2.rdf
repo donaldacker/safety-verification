@@ -1,0 +1,1429 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/donald/ontologies/2024/11/untitled-ontology-23#"
+     xml:base="http://www.semanticweb.org/donald/ontologies/2024/11/untitled-ontology-23"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:estoppoc="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/donald/ontologies/2024/11/untitled-ontology-23">
+        <rdfs:comment>Ontology for diploma thesis project - Donald Acker</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#adjoinsLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#adjoinsLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#adjoinsWall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#adjoinsWall -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#adjoinsWall">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#containsDevice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#containsDevice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isLocatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasColorChangingEStop -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasColorChangingEStop">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isColorChangingRemovableEStopForRemovableControlPanel"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasConnectedDevice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasConnectedDevice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isConnectedTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#ConnectionArray"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasConnectionArray -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasConnectionArray">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isConnectionArrayOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#ConnectionArray"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasEStop -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasEStop">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEStopForMachine"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasEStopRoute -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasEStopRoute">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEStopRouteOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasEStopRoutingTable -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasEStopRoutingTable">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEStopRoutingTableOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasRegisteredDevice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasRegisteredDevice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRegisteredBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasRegistrationArray -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasRegistrationArray">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRegistrationArrayOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasVisibleLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasVisibleLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isInVisibilityZone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isColorChangingRemovableEStopForRemovableControlPanel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isColorChangingRemovableEStopForRemovableControlPanel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isConnectedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isConnectedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isConnectionArrayOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isConnectionArrayOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEStopForMachine -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEStopForMachine">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEStopRouteOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEStopRouteOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEStopRoutingTableOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEStopRoutingTableOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isInVisibilityZone -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isInVisibilityZone">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isLocatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRegisteredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRegisteredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRegistrationArrayOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRegistrationArrayOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isSpannedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isSpannedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#spans"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isVisibleFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isVisibleFrom">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isVisibleFrom"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#routesFromEStop -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#routesFromEStop">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#routesToMachine -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#routesToMachine">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#spans -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#spans">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEngaged -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEngaged">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isInEStopCondition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isInEStopCondition">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isObstructedVisibilityZone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isObstructedVisibilityZone">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRedYellow -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRedYellow">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRunning -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRunning">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#ColorChangingEStop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#ColorChangingEStop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#ConnectionArray"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#ConnectionArray -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#ConnectionArray">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#ColorChangingEStop"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+        <estoppoc:isColorChangingRemovableEStopForRemovableControlPanel rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1"/>
+        <estoppoc:isLocatedIn rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1"/>
+        <estoppoc:isEngaged rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</estoppoc:isEngaged>
+        <estoppoc:isRedYellow rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</estoppoc:isRedYellow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#connectionArray1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#connectionArray1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#ConnectionArray"/>
+        <estoppoc:hasConnectedDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:hasConnectedDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:hasConnectedDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:hasConnectedDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:hasConnectedDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isConnectionArrayOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#safetyNet1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#controlRoom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#controlRoom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <estoppoc:containsDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC1"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC12"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+        <estoppoc:isConnectedTo rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#connectionArray1"/>
+        <estoppoc:isLocatedIn rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#controlRoom"/>
+        <estoppoc:isRegisteredBy rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#registrationArray1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1"/>
+        <estoppoc:spans rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:spans rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isEngaged rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</estoppoc:isEngaged>
+        <estoppoc:isRedYellow rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</estoppoc:isRedYellow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+        <estoppoc:isConnectedTo rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#connectionArray1"/>
+        <estoppoc:isEStopForMachine rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:isLocatedIn rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1"/>
+        <estoppoc:isRegisteredBy rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#registrationArray1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1"/>
+        <estoppoc:spans rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:isEngaged rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</estoppoc:isEngaged>
+        <estoppoc:isRedYellow rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</estoppoc:isRedYellow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+        <estoppoc:isConnectedTo rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#connectionArray1"/>
+        <estoppoc:isEStopForMachine rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isLocatedIn rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom2"/>
+        <estoppoc:isRegisteredBy rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#registrationArray1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1"/>
+        <estoppoc:spans rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isEngaged rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</estoppoc:isEngaged>
+        <estoppoc:isRedYellow rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</estoppoc:isRedYellow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopRoutingTable1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopRoutingTable1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable"/>
+        <estoppoc:hasEStopRoute rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrControlToMachine1"/>
+        <estoppoc:hasEStopRoute rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrControlToMachine2"/>
+        <estoppoc:hasEStopRoute rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrMachine1ToMachine1"/>
+        <estoppoc:hasEStopRoute rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrMachine2ToMachine2"/>
+        <estoppoc:isEStopRoutingTableOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#safetyNet1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrControlToMachine1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrControlToMachine1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+        <estoppoc:isEStopRouteOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopRoutingTable1"/>
+        <estoppoc:routesFromEStop rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:routesToMachine rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrControlToMachine2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrControlToMachine2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+        <estoppoc:isEStopRouteOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopRoutingTable1"/>
+        <estoppoc:routesFromEStop rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:routesToMachine rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrMachine1ToMachine1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrMachine1ToMachine1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+        <estoppoc:isEStopRouteOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopRoutingTable1"/>
+        <estoppoc:routesFromEStop rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:routesToMachine rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrMachine2ToMachine2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrMachine2ToMachine2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+        <estoppoc:isEStopRouteOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopRoutingTable1"/>
+        <estoppoc:routesFromEStop rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:routesToMachine rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <estoppoc:hasEStop rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:isConnectedTo rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#connectionArray1"/>
+        <estoppoc:isLocatedIn rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1"/>
+        <estoppoc:isRegisteredBy rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#registrationArray1"/>
+        <estoppoc:isSpannedBy rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:isSpannedBy rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1"/>
+        <estoppoc:isInEStopCondition rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</estoppoc:isInEStopCondition>
+        <estoppoc:isRunning rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</estoppoc:isRunning>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+        <estoppoc:hasEStop rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:isConnectedTo rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#connectionArray1"/>
+        <estoppoc:isLocatedIn rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom2"/>
+        <estoppoc:isRegisteredBy rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#registrationArray1"/>
+        <estoppoc:isSpannedBy rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:isSpannedBy rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1"/>
+        <estoppoc:isInEStopCondition rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</estoppoc:isInEStopCondition>
+        <estoppoc:isRunning rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</estoppoc:isRunning>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <estoppoc:containsDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1"/>
+        <estoppoc:containsDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:containsDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:containsDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone1"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone12"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC1"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC12"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+        <estoppoc:containsDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:containsDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone12"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone2"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC12"/>
+        <estoppoc:isInVisibilityZone rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#registrationArray1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#registrationArray1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+        <estoppoc:hasRegisteredDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:hasRegisteredDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:hasRegisteredDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:hasRegisteredDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:hasRegisteredDevice rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isRegistrationArrayOf rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#safetyNet1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        <estoppoc:hasColorChangingEStop rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1"/>
+        <estoppoc:isLocatedIn rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+        <estoppoc:isVisibleFrom rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#safetyNet1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#safetyNet1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+        <estoppoc:hasConnectionArray rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#connectionArray1"/>
+        <estoppoc:hasEStopRoutingTable rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopRoutingTable1"/>
+        <estoppoc:hasRegistrationArray rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#registrationArray1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone12">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#controlRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#controlRoom"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC12">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#controlRoom"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#controlRoom"/>
+        <estoppoc:hasVisibleLocation rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#ConnectionArray"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Device"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoutingTable"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RegistrationArray"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#SafetyNetwork"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#RemovableControlPanel"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#colorChangingEStopRCP1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#connectionArray1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#controlRoom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopControlRoom"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopMachine2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#eStopRoutingTable1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrControlToMachine1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrControlToMachine2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrMachine1ToMachine1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#esrMachine2ToMachine2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#machine2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#productionRoom2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#registrationArray1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#removableControlPanel1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#safetyNet1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone12"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZone2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC12"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#visZoneC2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc/r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc/m">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc/e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/w">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/loc1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/loc2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/locA">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/locB">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/deviceA">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/deviceB">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Identify violations of &quot;2.1: an e-stop stops all spanned machines&quot;</rdfs:comment>
+        <rdfs:label>queryEStopSpansMachinesViolation</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStop"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#e"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Machine"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#spans"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#e"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#m"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isEngaged"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#e"/>
+                                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isRunning"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#m"/>
+                                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#e"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#m"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Derives the spans relationship from the existence of e-stop routes</rdfs:comment>
+        <rdfs:label>spansRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#EStopRoute"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc/r"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#routesToMachine"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc/r"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc/m"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#routesFromEStop"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc/r"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc/e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#spans"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc/e"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc/m"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Flags obstructed visibility zones</rdfs:comment>
+        <rdfs:label>wallRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Wall"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/w"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/loc1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#Location"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/loc2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/loc1"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/loc2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#adjoinsLocation"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/w"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/loc1"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#adjoinsLocation"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/w"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/loc2"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasVisibleLocation"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/z"/>
+                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/loc1"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#hasVisibleLocation"/>
+                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/z"/>
+                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/loc2"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isObstructedVisibilityZone"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/z"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Applies isVisibleFrom relation to Device</rdfs:comment>
+        <rdfs:label>visibilityRule</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#VisibilityZone"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isInVisibilityZone"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/locA"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isInVisibilityZone"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/locB"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isLocatedIn"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/deviceA"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/locA"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isLocatedIn"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/deviceB"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/locB"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#isVisibleFrom"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/deviceA"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/donald/ontologies/2024/9/deviceB"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

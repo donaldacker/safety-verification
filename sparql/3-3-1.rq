@@ -1,0 +1,26 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# My ontology
+PREFIX poc: <http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#>
+
+# Requirement 3.3.1: Each red/yellow e-stop spans all visible machines
+# Violation: A r/y e-stop and a visible machine which it does not span.
+
+SELECT ?estop ?machine
+WHERE {
+  {
+    ?estop a poc:EStop .
+    ?estop poc:isRedYellow true .
+    ?machine a poc:Machine .
+    ?machine poc:isVisibleFrom ?estop .
+  }
+  MINUS
+  {
+    ?estop a poc:EStop .
+    ?machine a poc:Machine .
+    ?estop poc:spans ?machine .
+  }
+}

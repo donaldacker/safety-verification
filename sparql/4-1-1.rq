@@ -1,0 +1,29 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# My ontology
+PREFIX poc: <http://www.semanticweb.org/donald/ontologies/2024/9/estoppoc#>
+
+# Requirement 4.1.1: Each machine and red-yellow e-stop is connected to the network. 
+# Violation: A device which is a machine or a r/y e-stop which is not connected to the network.
+
+SELECT ?device
+WHERE {
+  {
+    {
+      ?device a poc:Machine .
+    }
+    UNION
+    {
+      ?device a poc:EStop .
+      ?device poc:isRedYellow true .
+    }
+  }
+  MINUS
+  {
+    ?device a poc:Device .
+    ?device poc:isConnectedTo ?safetyNetwork .
+  }
+}
